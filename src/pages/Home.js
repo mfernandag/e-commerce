@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/NavBar";
 import Banner from "../components/Banner";
 import ItemCount from "../components/ItemCount";
+import Item from "../components/Item";
 
 const Home = () => {
   const [counter, setCounter] = useState(0);
@@ -22,6 +23,7 @@ const Home = () => {
         min={min}
         max={max}
       />
+      <Item />
     </>
   );
 };

@@ -1,0 +1,81 @@
+const itemList = [
+  {
+    id: "001",
+    name: "hdkjhkdd",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "001",
+    name: "dos",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "002",
+    name: "tres",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "003",
+    name: "cuatro",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "004",
+    name: "cinco",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "005",
+    name: "seis",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "006",
+    name: "siete",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "007",
+    name: "ocho",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "008",
+    name: "nueve",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "009",
+    name: "diez",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+  {
+    id: "010",
+    name: "once",
+    description: "descripción",
+    precio: "787",
+    stock: "12",
+  },
+];
+
+export default itemList;
