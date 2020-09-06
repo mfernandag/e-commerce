@@ -4,9 +4,7 @@ import { Card, Button, Container } from "react-bootstrap";
 
 const Item = () => {
   const [productsList, setProductsList] = useState([]);
-  const [error, setError] = useState(
-    "No hay productos disponibles en este momento"
-  );
+  const [error, setError] = useState("");
 
   itemList()
     .then((productList) => {
