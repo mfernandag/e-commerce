@@ -14,7 +14,7 @@ const Item = ({ productsList, error }) => {
                 <Card.Img variant="top" src={item.img} />
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
-                  <Card.Text>{item.description}</Card.Text>
+                  <Card.Text>${item.price}</Card.Text>
                   <Button variant="success">Agregar al carrito</Button>
                 </Card.Body>
               </Card>

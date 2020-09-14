@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../components/ItemDetail";
 // import { itemList } from "../components/ItemList";
@@ -9,10 +9,20 @@ import ItemDetail from "../components/ItemDetail";
 
 const ItemDetailContainer = ({ data }) => {
   const { id } = useParams();
+  const [counter, setCounter] = useState(0);
+  let min = 1;
+  let max = 10;
+
   return (
     <div>
       <h2>Now showing product {data[`${id - 1}`].id}</h2>
-      <ItemDetail data={data} />
+      <ItemDetail
+        data={data}
+        setCounter={setCounter}
+        counter={counter}
+        min={min}
+        max={max}
+      />
     </div>
   );
 };

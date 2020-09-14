@@ -5,7 +5,8 @@ export const itemList = () => {
         {
           id: "001",
           name: "uno",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/poppy.jpg"),
@@ -13,7 +14,8 @@ export const itemList = () => {
         {
           id: "002",
           name: "dos",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/scabiosa.webp"),
@@ -21,7 +23,8 @@ export const itemList = () => {
         {
           id: "003",
           name: "tres",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/poppy.jpg"),
@@ -29,7 +32,8 @@ export const itemList = () => {
         {
           id: "004",
           name: "cuatro",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/scabiosa.webp"),
@@ -37,7 +41,8 @@ export const itemList = () => {
         {
           id: "005",
           name: "cinco",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/poppy.jpg"),
@@ -45,7 +50,8 @@ export const itemList = () => {
         {
           id: "006",
           name: "seis",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/scabiosa.webp"),
@@ -53,7 +59,8 @@ export const itemList = () => {
         {
           id: "007",
           name: "siete",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/poppy.jpg"),
@@ -61,7 +68,8 @@ export const itemList = () => {
         {
           id: "008",
           name: "ocho",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/scabiosa.webp"),
@@ -69,7 +77,8 @@ export const itemList = () => {
         {
           id: "009",
           name: "nueve",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/poppy.jpg"),
@@ -77,7 +86,8 @@ export const itemList = () => {
         {
           id: "0010",
           name: "diez",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/scabiosa.webp"),
@@ -85,7 +95,8 @@ export const itemList = () => {
         {
           id: "0011",
           name: "once",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/poppy.jpg"),
@@ -93,7 +104,8 @@ export const itemList = () => {
         {
           id: "0012",
           name: "doce",
-          description: "descripción",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
           price: "787",
           stock: "12",
           img: require("../assets/images/scabiosa.webp"),

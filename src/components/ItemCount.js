@@ -2,7 +2,7 @@ import React from "react";
 
 const ItemCount = ({ setCounter, counter, min, max }) => {
   return (
-    <div className="container d-flex">
+    <div className="d-flex">
       <button
         onClick={() => setCounter(counter - 1)}
         type="submit"
