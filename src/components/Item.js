@@ -9,15 +9,16 @@ const Item = ({ productsList, error }) => {
       <Container className="d-flex justify-content-around flex-wrap mt-4">
         {productsList.map((item, id) => {
           return (
-            <Card className="mb-4" key={id} style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={item.img} />
-              <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text>{item.description}</Card.Text>
-                <Button variant="success">Agregar al carrito</Button>
-                <Link to={`/producto/${item.id}`}>VER DETALLES</Link>
-              </Card.Body>
-            </Card>
+            <Link key={id} to={`/producto/${item.id}`}>
+              <Card className="mb-4" id={item.id} style={{ width: "18rem" }}>
+                <Card.Img variant="top" src={item.img} />
+                <Card.Body>
+                  <Card.Title>{item.name}</Card.Title>
+                  <Card.Text>{item.description}</Card.Text>
+                  <Button variant="success">Agregar al carrito</Button>
+                </Card.Body>
+              </Card>
+            </Link>
           );
         })}
       </Container>
