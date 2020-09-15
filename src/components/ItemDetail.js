@@ -1,7 +1,7 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 // Detalle de producto - B
 
 // 1- Crear componente ItemDetail.js que debe recibir por prop el Ítem obtenido en el desafío A
@@ -10,8 +10,13 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const ItemDetail = ({ data, setCounter, counter, min, max }) => {
   const { id } = useParams();
+
+  const handleClick = () => {
+    console.log(`Soy el producto ${id}`);
+  };
+
   return (
-    <Container>
+    <Container className="pt-4">
       <Row>
         <Col xs={6}>
           <img
@@ -22,7 +27,7 @@ const ItemDetail = ({ data, setCounter, counter, min, max }) => {
         </Col>
         <Col xs={4}>
           <h1>{data[`${id - 1}`].name}</h1>
-          <p>${data[`${id - 1}`].price}</p>
+          <h3>${data[`${id - 1}`].price}</h3>
           <p>{data[`${id - 1}`].description}</p>
           <ItemCount
             setCounter={setCounter}
@@ -30,6 +35,15 @@ const ItemDetail = ({ data, setCounter, counter, min, max }) => {
             min={min}
             max={max}
           />
+          <Button
+            onClick={() => handleClick()}
+            className="mt-4"
+            variant="warning"
+            size="lg"
+            block
+          >
+            Agregar al carrito
+          </Button>
         </Col>
       </Row>
     </Container>

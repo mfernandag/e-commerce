@@ -1,23 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner";
 import Item from "./components/Item";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+// import { productsList } from "./components/productsList";
 import { itemList } from "./components/ItemList";
 
 function App() {
-  const [productsList, setProductsList] = useState([]);
+  const [getProductsList, setProductsList] = useState([]);
   const [error, setError] = useState("");
 
   itemList()
-    .then((productList) => {
-      setProductsList(productList);
+    .then((getProductList) => {
+      setProductsList(getProductList);
     })
     .catch((err) => {
       setError(err);
     });
+
+  // useEffect(() => {
+  //   // productsList().then((response) => {
+  //   //   setProductsList(response.data);
+  //   // });
+  //   productsList()
+  //     .then((getProductList) => {
+  //       setProductsList(getProductList);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //     });
+  // }, []);
 
   return (
     <BrowserRouter>
@@ -29,10 +43,10 @@ function App() {
               "Bienvenidos, próximamente encontrarán algún producto a la venta"
             }
           />
-          <Item productsList={productsList} error={error} />
+          <Item productsList={getProductsList} error={error} />
         </Route>
         <Route path="/producto/:id">
-          <ItemDetailContainer data={productsList} />
+          <ItemDetailContainer data={getProductsList} />
         </Route>
       </Switch>
     </BrowserRouter>
