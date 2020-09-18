@@ -16,9 +16,9 @@ const ItemDetail = ({ data, setCounter, counter, min, max }) => {
   };
 
   return (
-    <Container className="t-4">
-      <Row>
-        <Col xs={6}>
+    <Container className="t-4 pt-4">
+      <Row className="pt-4">
+        <Col xs={6} className="mr-4">
           <img
             className="img-fluid"
             alt="flower"
