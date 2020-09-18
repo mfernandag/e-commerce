@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner";
 import Item from "./components/Item";
+import Home from "./pages/Home";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -38,12 +39,13 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Banner
+          <Home data={getProductsList} error={error} />
+          {/* <Banner
             greeting={
               "Bienvenidos, próximamente encontrarán algún producto a la venta"
             }
           />
-          <Item productsList={getProductsList} error={error} />
+          <Item productsList={getProductsList} error={error} /> */}
         </Route>
         <Route path="/producto/:id">
           <ItemDetailContainer data={getProductsList} />

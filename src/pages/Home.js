@@ -4,21 +4,27 @@ import ItemCount from "../components/ItemCount";
 import Item from "../components/Item";
 import { itemList } from "../components/ItemList";
 
-const Home = () => {
-  const [counter, setCounter] = useState(0);
-  const [productsList, setProductsList] = useState([]);
-  const [error, setError] = useState("");
+const Home = ({ data, error }) => {
+  // const [getProductsList, setProductsList] = useState([]);
+  // const [error, setError] = useState("");
 
-  itemList()
-    .then((productList) => {
-      setProductsList(productList);
-    })
-    .catch((err) => {
-      setError(err);
-    });
+  // itemList()
+  //   .then((getProductList) => {
+  //     setProductsList(getProductList);
+  //   })
+  //   .catch((err) => {
+  //     setError(err);
+  //   });
+  // const [getProductsList, setProductsList] = useState([]);
+  // const [error, setError] = useState("");
 
-  let min = 1;
-  let max = 10;
+  // itemList()
+  //   .then((getProductList) => {
+  //     setProductsList(getProductList);
+  //   })
+  //   .catch((err) => {
+  //     setError(err);
+  //   });
 
   return (
     <>
@@ -27,13 +33,7 @@ const Home = () => {
           "Bienvenidos, próximamente encontrarán algún producto a la venta"
         }
       />
-      <ItemCount
-        setCounter={setCounter}
-        counter={counter}
-        min={min}
-        max={max}
-      />
-      <Item productsList={productsList} error={error} />
+      <Item productsList={data} error={error} />
     </>
   );
 };

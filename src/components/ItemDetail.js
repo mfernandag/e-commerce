@@ -16,7 +16,7 @@ const ItemDetail = ({ data, setCounter, counter, min, max }) => {
   };
 
   return (
-    <Container className="pt-4">
+    <Container className="t-4">
       <Row>
         <Col xs={6}>
           <img
