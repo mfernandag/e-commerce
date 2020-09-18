@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Banner from "../components/Banner";
-import ItemCount from "../components/ItemCount";
+//import ItemCount from "../components/ItemCount";
 import Item from "../components/Item";
-import { itemList } from "../components/ItemList";
+//import { itemList } from "../components/ItemList";
 
 const Home = ({ data, error }) => {
   // const [getProductsList, setProductsList] = useState([]);
