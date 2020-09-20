@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import Cart from "./components/Cart";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -38,6 +39,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home data={getProductsList} error={error} />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
         <Route path="/producto/:id">
           <ItemDetailContainer data={getProductsList} />

@@ -1,21 +1,26 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import CartIcon from "./CartIcon";
 
 const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="md">
-        <Navbar.Brand href="#home">Nombre tienda</Navbar.Brand>
+        <Navbar.Brand href="/">Nombre tienda</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#productos">Productos</Nav.Link>
-            <Nav.Link href="#carrito">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+            <Link className="nav-link" to="/productos">
+              Productos
+            </Link>
+            <Link className="nav-link" to="/cart">
               <CartIcon />
               Carrito
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
