@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
-// Detalle de producto - B
+import { CartContext } from "../context/cartContext";
 
-// 1- Crear componente ItemDetail.js que debe recibir por prop el Ítem obtenido en el desafío A
+let min = 1;
+let max = 10;
 
-// 2- Conectarlo con el contador del desafío n°4 (clase 5)  y un nuevo botón “Comprar”
-
-const ItemDetail = ({ data, setCounter, counter, min, max }) => {
+const ItemDetail = ({ data }) => {
   const { id } = useParams();
+  const [counter, setCounter] = useState(0);
+  // const [size, setSize] = useState('');
+  const [showProduct, setShowProduct] = useState(false);
+
+  const [cart, setCart, sumaProductos] = useContext(CartContext);
 
   const handleClick = () => {
-    console.log(`Soy el producto ${id}`);
+    console.log(`Quiero comprar ${counter} items`);
   };
+
+  const addToCart = () => {
+    const product = data[id];
+    console.log(product);
+    setCart((currentCart) => [...currentCart, product]);
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   return (
     <Container className="t-4 pt-4">
@@ -26,7 +40,9 @@ const ItemDetail = ({ data, setCounter, counter, min, max }) => {
           ></img>
         </Col>
         <Col xs={4}>
-          <h1>{data[`${id - 1}`].name}</h1>
+          {/* <h1>{data[`${id - 1}`].name}</h1> */}
+
+          <h1>{data[id].title}</h1>
           <h3>${data[`${id - 1}`].price}</h3>
           <p>{data[`${id - 1}`].description}</p>
           <ItemCount
@@ -36,13 +52,13 @@ const ItemDetail = ({ data, setCounter, counter, min, max }) => {
             max={max}
           />
           <Button
-            onClick={() => handleClick()}
+            onClick={addToCart}
             className="mt-4"
             variant="warning"
             size="lg"
             block
           >
-            Agregar al carrito
+            Agregar al carrito {counter} items
           </Button>
         </Col>
       </Row>
