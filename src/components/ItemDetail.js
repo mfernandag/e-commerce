@@ -40,9 +40,7 @@ const ItemDetail = ({ data }) => {
           ></img>
         </Col>
         <Col xs={4}>
-          {/* <h1>{data[`${id - 1}`].name}</h1> */}
-
-          <h1>{data[id].title}</h1>
+          <h1>{data[`${id - 1}`].name}</h1>
           <h3>${data[`${id - 1}`].price}</h3>
           <p>{data[`${id - 1}`].description}</p>
           <ItemCount

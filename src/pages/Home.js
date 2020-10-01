@@ -1,40 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Banner from "../components/Banner";
-//import ItemCount from "../components/ItemCount";
 import Item from "../components/Item";
-//import { itemList } from "../components/ItemList";
+import { Spinner } from "react-bootstrap";
 
-const Home = ({ data, error }) => {
-  // const [getProductsList, setProductsList] = useState([]);
-  // const [error, setError] = useState("");
+const Home = (props) => {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
 
-  // itemList()
-  //   .then((getProductList) => {
-  //     setProductsList(getProductList);
-  //   })
-  //   .catch((err) => {
-  //     setError(err);
-  //   });
-  // const [getProductsList, setProductsList] = useState([]);
-  // const [error, setError] = useState("");
-
-  // itemList()
-  //   .then((getProductList) => {
-  //     setProductsList(getProductList);
-  //   })
-  //   .catch((err) => {
-  //     setError(err);
-  //   });
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setData(props.data);
+      setLoading(false);
+    }, 2000);
+  }, [props.data]);
 
   return (
-    <>
+    <div>
       <Banner
         greeting={
           "Bienvenidos, próximamente encontrarán algún producto a la venta"
         }
       />
-      <Item productsList={data} error={error} />
-    </>
+      {loading ? (
+        <div className="d-flex align-items-center justify-content-center">
+          <Spinner animation="grow" variant="success" />
+        </div>
+      ) : (
+        <Item data={data} />
+      )}
+    </div>
   );
 };
 
