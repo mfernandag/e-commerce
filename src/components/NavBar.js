@@ -19,7 +19,6 @@ const NavBar = () => {
             </Link>
             <Link className="nav-link" to="/cart">
               <CartIcon />
-              Carrito
             </Link>
           </Nav>
         </Navbar.Collapse>

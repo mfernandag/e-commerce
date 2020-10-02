@@ -1,5 +1,4 @@
 import React from "react";
-import { Button, Input } from "react-bootstrap";
 
 const ItemCount = ({ setCounter, counter, min, max }) => {
   return (
@@ -13,7 +12,6 @@ const ItemCount = ({ setCounter, counter, min, max }) => {
         -
       </button>
       <div className="p-2 font-weight-bold">{counter}</div>
-      {/* <input type="number">{counter} </input> */}
       <button
         onClick={() => setCounter(counter + 1)}
         type="submit"

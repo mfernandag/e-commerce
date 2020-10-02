@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
+import { CartContext } from "../context/cartContext";
 
 const Cart = () => {
+  const [cart, setCart] = useContext(CartContext);
+  console.log(cart.name);
+
   return (
     <Container className="mt-4">
       <Row>
         <h3>Carrito de compras</h3>
+        <span>Items in cart: {cart.length}</span>
       </Row>
       <Row>
         <Table responsive>
@@ -19,9 +24,16 @@ const Cart = () => {
           </thead>
 
           <tbody>
-            <tr>
-              <td></td>
-            </tr>
+            {cart.map((item, id) => {
+              return (
+                <tr key={id}>
+                  <td>{item.name}</td>
+                  <td>${item.price}</td>
+                  <td>{cart.length}</td>
+                  <td></td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </Row>
