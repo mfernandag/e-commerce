@@ -12,12 +12,17 @@ const ItemDetailContainer = ({ data }) => {
 
   const { id } = useParams();
 
-  const [cart, setCart, sumaProductos] = useContext(CartContext);
+  const [cart, setCart] = useContext(CartContext);
 
   const addToCart = () => {
-    const product = data[`${id - 1}`];
+    const product = data[id];
     console.log(product);
     setCart((currentCart) => [...currentCart, product]);
+    // cartItems(counter, data.id);
+  };
+
+  const countMaker = (c) => {
+    setCounter(c);
   };
 
   useEffect(() => {
@@ -32,12 +37,13 @@ const ItemDetailContainer = ({ data }) => {
             {/* <img className="img-fluid" alt="flower" src={data[id].img}></img> */}
           </Col>
           <Col xs={4}>
-            <h1>{data[`${id - 1}`].name}</h1>
-            <h3>${data[`${id - 1}`].price}</h3>
-            <p>{data[`${id - 1}`].description}</p>
+            <h1>{data[id].name}</h1>
+            <h3>${data[id].price}</h3>
+            <p>{data[id].description}</p>
             <ItemCount
-              setCounter={setCounter}
-              counter={counter}
+              // setCounter={setCounter}
+              // counter={counter}
+              countMaker={countMaker}
               min={min}
               max={max}
             />

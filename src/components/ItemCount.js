@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ItemCount = ({ setCounter, counter, min, max }) => {
+const ItemCount = ({ countMaker, min, max }) => {
+  const [countItems, setCountItems] = useState(1);
+
   return (
-    <div className="d-flex">
+    <div className="d-flex" onClick={countMaker(countItems)}>
       <button
-        onClick={() => setCounter(counter - 1)}
+        onClick={() => setCountItems(countItems - 1)}
         type="submit"
-        disabled={counter <= min}
+        disabled={countItems <= min}
         className="btn btn-outline-secondary font-weight-bold"
       >
         -
       </button>
-      <div className="p-2 font-weight-bold">{counter}</div>
+      <div className="p-2 font-weight-bold">{countItems}</div>
       <button
-        onClick={() => setCounter(counter + 1)}
+        onClick={() => setCountItems(countItems + 1)}
         type="submit"
-        disabled={counter >= max}
+        disabled={countItems >= max}
         className="btn btn-outline-secondary font-weight-bold"
       >
         +

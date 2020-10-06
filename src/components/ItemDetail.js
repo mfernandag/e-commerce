@@ -33,16 +33,12 @@ const ItemDetail = ({ data }) => {
     <Container className="t-4 pt-4">
       <Row className="pt-4">
         <Col xs={6} className="mr-4">
-          <img
-            className="img-fluid"
-            alt="flower"
-            src={data[`${id - 1}`].img}
-          ></img>
+          <img className="img-fluid" alt="flower" src={data[id].img}></img>
         </Col>
         <Col xs={4}>
-          <h1>{data[`${id - 1}`].name}</h1>
-          <h3>${data[`${id - 1}`].price}</h3>
-          <p>{data[`${id - 1}`].description}</p>
+          <h1>{data[id].name}</h1>
+          <h3>${data[id].price}</h3>
+          <p>{data[id].description}</p>
           <ItemCount
             setCounter={setCounter}
             counter={counter}

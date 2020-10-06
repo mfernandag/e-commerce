@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
