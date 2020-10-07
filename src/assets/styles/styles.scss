@@ -1,0 +1,12 @@
+.Link {
+  text-decoration: none !important;
+}
+
+.card-links {
+  color: black !important;
+  .price {
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}

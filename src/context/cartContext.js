@@ -11,15 +11,15 @@ export const CartProvider = (props) => {
     const price = c;
     const total = a * c;
     const image = d;
-    const compra = {
+    const purchaseData = {
       quantity: quantity,
       name: name,
       price: price,
       total: total,
       image: image,
     };
-    console.log(compra);
-    let purchases = [...cart, compra];
+    console.log(purchaseData);
+    let purchases = [...cart, purchaseData];
     console.log(purchases);
     setCart(purchases);
   };

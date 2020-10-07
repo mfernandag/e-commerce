@@ -9,6 +9,8 @@ import { productsList } from "./components/productsList";
 
 import { CartProvider } from "./context/cartContext";
 
+import "./assets/styles/styles.css";
+
 function App() {
   return (
     <BrowserRouter>

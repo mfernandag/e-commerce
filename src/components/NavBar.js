@@ -7,7 +7,10 @@ const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="md">
-        <Navbar.Brand href="/">Nombre tienda</Navbar.Brand>
+        {/* <Navbar.Brand href="/">Nombre tienda</Navbar.Brand> */}
+        <Link className="nav-link" to="/">
+          <Navbar.Brand>Nombre tienda</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
