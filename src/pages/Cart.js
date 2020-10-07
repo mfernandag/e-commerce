@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { CartContext } from "../context/cartContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -21,7 +22,7 @@ const Cart = () => {
                   <th>Producto</th>
                   <th>Precio</th>
                   <th>Cantidad</th>
-                  <th>Total</th>
+                  <th>Subtotal</th>
                 </tr>
               </thead>
 
@@ -57,7 +58,12 @@ const Cart = () => {
           </Row>
         </>
       ) : (
-        <h3 className="text-center">El carrito está vacío</h3>
+        <div className="text-center">
+          <h3 className="mb-4">El carrito de compras está vacío</h3>
+          <Link to="/">
+            <Button variant="success">Ver productos</Button>{" "}
+          </Link>
+        </div>
       )}
     </Container>
   );
