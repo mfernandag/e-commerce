@@ -14,13 +14,6 @@ const ItemDetailContainer = ({ data }) => {
 
   const [cart, setCart, cartItems] = useContext(CartContext);
 
-  // const addToCart = () => {
-  //   const product = data[id];
-  //   console.log(product);
-  //   setCart((currentCart) => [...currentCart, product]);
-  //   // cartItems(counter, data.id);
-  // };
-
   const addToCart = () => {
     cartItems(counter, data[id].name, data[id].price, data[id].img);
   };
@@ -44,13 +37,7 @@ const ItemDetailContainer = ({ data }) => {
             <h1>{data[id].name}</h1>
             <h3>${data[id].price}</h3>
             <p>{data[id].description}</p>
-            <ItemCount
-              // setCounter={setCounter}
-              // counter={counter}
-              countMaker={countMaker}
-              min={min}
-              max={max}
-            />
+            <ItemCount countMaker={countMaker} min={min} max={max} />
             <Button
               onClick={addToCart}
               className="mt-4"
