@@ -6,7 +6,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 1,
@@ -15,7 +15,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/scabiosa.webp"),
+    img: require("../assets/images/scabiosa.webp"),
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/scabiosa.webp"),
+    img: require("../assets/images/scabiosa.webp"),
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/scabiosa.webp"),
+    img: require("../assets/images/scabiosa.webp"),
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/scabiosa.webp"),
+    img: require("../assets/images/scabiosa.webp"),
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/scabiosa.webp"),
+    img: require("../assets/images/scabiosa.webp"),
   },
   {
     id: 10,
@@ -96,7 +96,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 11,
@@ -105,6 +105,6 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/scabiosa.webp"),
+    img: require("../assets/images/scabiosa.webp"),
   },
 ];
