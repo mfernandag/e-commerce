@@ -6,7 +6,7 @@ export const productsList = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit leo. Sed et efficitur risus, ac fringilla augue. Morbi lacus mauris, consectetur id venenatis id, convallis sit amet nunc. Aenean porttitor, leo ut tempus ornare, justo velit suscipit magna, id condimentum lacus est elementum purus.",
     price: "787",
     stock: "12",
-    // img: require("../assets/images/poppy.jpg"),
+    img: require("../assets/images/poppy.jpg"),
   },
   {
     id: 1,

@@ -12,13 +12,17 @@ const ItemDetailContainer = ({ data }) => {
 
   const { id } = useParams();
 
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, cartItems] = useContext(CartContext);
+
+  // const addToCart = () => {
+  //   const product = data[id];
+  //   console.log(product);
+  //   setCart((currentCart) => [...currentCart, product]);
+  //   // cartItems(counter, data.id);
+  // };
 
   const addToCart = () => {
-    const product = data[id];
-    console.log(product);
-    setCart((currentCart) => [...currentCart, product]);
-    // cartItems(counter, data.id);
+    cartItems(counter, data[id].name, data[id].price, data[id].img);
   };
 
   const countMaker = (c) => {

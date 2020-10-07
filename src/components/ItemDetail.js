@@ -13,18 +13,18 @@ const ItemDetail = ({ data }) => {
   // const [size, setSize] = useState('');
   const [showProduct, setShowProduct] = useState(false);
 
-  const [cart, setCart, sumaProductos] = useContext(CartContext);
+  const [cart, setCart, cartItems] = useContext(CartContext);
 
   const handleClick = () => {
     console.log(`Quiero comprar ${counter} items`);
   };
 
-  const addToCart = () => {
-    const product = data[id];
-    console.log(product);
-    setCart((currentCart) => [...currentCart, product]);
-  };
-
+  // const addToCart = () => {
+  //   const product = data[id];
+  //   console.log(product);
+  //   setCart((currentCart) => [...currentCart, product]);
+  // };
+  cartItems(counter, data[id].description);
   useEffect(() => {
     console.log(cart);
   }, [cart]);
@@ -46,7 +46,7 @@ const ItemDetail = ({ data }) => {
             max={max}
           />
           <Button
-            onClick={addToCart}
+            onClick={cartItems}
             className="mt-4"
             variant="warning"
             size="lg"

@@ -4,7 +4,7 @@ import { CartContext } from "../context/cartContext";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
-  console.log(cart.name);
+  console.log(cart);
 
   return (
     <Container className="mt-4">
@@ -29,10 +29,18 @@ const Cart = () => {
                 {cart.map((item, id) => {
                   return (
                     <tr key={id}>
-                      <td>{item.name}</td>
+                      <td>
+                        <img
+                          className="img-fluid mr-2"
+                          alt="flower"
+                          width="70px"
+                          src={item.image}
+                        ></img>
+                        {item.name}
+                      </td>
                       <td>${item.price}</td>
-                      <td>{cart.length}</td>
-                      <td></td>
+                      <td>{item.quantity}</td>
+                      <td>${item.total}</td>
                     </tr>
                   );
                 })}
@@ -49,7 +57,7 @@ const Cart = () => {
           </Row>
         </>
       ) : (
-        <h3>El carrito está vacío</h3>
+        <h3 className="text-center">El carrito está vacío</h3>
       )}
     </Container>
   );
