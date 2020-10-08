@@ -6,16 +6,16 @@ export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
 
   const cartItems = (a, b, c, d) => {
-    const quantity = a;
-    const name = b;
-    const price = c;
-    const total = a * c;
-    const image = d;
+    let quantity = a;
+    let name = b;
+    let price = c;
+    let subtotal = a * c;
+    let image = d;
     const purchaseData = {
       quantity: quantity,
       name: name,
       price: price,
-      total: total,
+      subtotal: subtotal,
       image: image,
     };
     console.log(purchaseData);

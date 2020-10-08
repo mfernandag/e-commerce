@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
-  console.log(cart);
+  let totalSum;
+
+  const reducer = () => {
+    totalSum = cart.reduce((acc, subtotal) => acc + subtotal.subtotal, 0);
+    return totalSum;
+  };
+
+  reducer();
 
   return (
     <Container className="mt-4">
@@ -41,7 +48,7 @@ const Cart = () => {
                       </td>
                       <td>${item.price}</td>
                       <td>{item.quantity}</td>
-                      <td>${item.total}</td>
+                      <td>${item.subtotal}</td>
                     </tr>
                   );
                 })}
@@ -50,7 +57,7 @@ const Cart = () => {
           </Row>
           <Row className="d-flex flex-column float-right">
             <Col>
-              <h4>TOTAL:</h4>
+              <h4>TOTAL: ${totalSum}</h4>
               <Button className="mt-4" variant="dark" block>
                 FINALIZAR COMPRA
               </Button>
