@@ -2,18 +2,34 @@ import React, { useState, useEffect } from "react";
 import Banner from "../components/Banner";
 import Item from "../components/Item";
 import { Spinner } from "react-bootstrap";
+import { getFirestore } from "../firebase/index";
 
-const Home = (props) => {
+const Home = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setData(props.data);
-      setLoading(false);
-    }, 2000);
-  }, [props.data]);
+    const db = getFirestore();
+    const itemCollection = db.collection("items");
+    itemCollection
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.size === 0) {
+          console.log("No results");
+        }
+        setItems(
+          querySnapshot.docs.map((doc) => {
+            return { id: doc.id, ...doc.data() };
+          })
+        );
+      })
+      .catch((error) => {
+        console.log("Error searching items", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div>
@@ -27,7 +43,7 @@ const Home = (props) => {
           <Spinner animation="grow" variant="success" />
         </div>
       ) : (
-        <Item data={data} />
+        <Item items={items} />
       )}
     </div>
   );
