@@ -16,6 +16,7 @@ const Home = () => {
       .then((querySnapshot) => {
         if (querySnapshot.size === 0) {
           console.log("No results");
+          return true;
         }
         setItems(
           querySnapshot.docs.map((doc) => {
