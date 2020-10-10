@@ -8,7 +8,7 @@ import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
 let min = 1;
 let max = 10;
 
-const ItemDetailContainer = ({ data }) => {
+const ItemDetailContainer = () => {
   const { id } = useParams();
   const [counter, setCounter] = useState(1);
   const [product, setProduct] = useState({});

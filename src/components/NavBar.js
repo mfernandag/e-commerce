@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartIcon from "./CartIcon";
 
@@ -7,7 +7,6 @@ const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="md">
-        {/* <Navbar.Brand href="/">Nombre tienda</Navbar.Brand> */}
         <Link className="nav-link" to="/">
           <Navbar.Brand>Nombre tienda</Navbar.Brand>
         </Link>
@@ -17,9 +16,14 @@ const NavBar = () => {
             <Link className="nav-link" to="/">
               Home
             </Link>
-            <Link className="nav-link" to="/productos">
-              Productos
-            </Link>
+            <NavDropdown title="Productos" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/productos/semillas">
+                Semillas
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/productos/plantas">
+                Plantas
+              </NavDropdown.Item>
+            </NavDropdown>
             <Link className="nav-link" to="/cart">
               <CartIcon />
             </Link>
