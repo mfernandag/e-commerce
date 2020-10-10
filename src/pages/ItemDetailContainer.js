@@ -60,7 +60,7 @@ const ItemDetailContainer = () => {
         <Container className="t-4 pt-4">
           <Row className="pt-4">
             <Col xs={6} className="mr-4">
-              {/* <img className="img-fluid" alt="flower" src={data[id].img}></img> */}
+              <img className="img-fluid" alt="flower" src={product.img}></img>
             </Col>
             <Col xs={4}>
               <h1>{product.name}</h1>

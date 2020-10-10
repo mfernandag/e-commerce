@@ -20,20 +20,20 @@ const Cart = () => {
         <>
           <Row>
             <h3>Carrito de compras</h3>
-            <span>Items in cart: {cart.length}</span>
+            {/* <span>Items in cart: {cart.length}</span> */}
           </Row>
           <Row>
             <Table responsive>
               <thead>
                 <tr>
                   <th>Producto</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
-                  <th>Subtotal</th>
+                  <th className="text-center">Precio</th>
+                  <th className="text-center">Cantidad</th>
+                  <th className="text-center">Subtotal</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="vh-100 align-items-center">
                 {cart.map((item, id) => {
                   return (
                     <tr key={id}>
@@ -46,9 +46,15 @@ const Cart = () => {
                         ></img>
                         {item.name}
                       </td>
-                      <td>${item.price}</td>
-                      <td>{item.quantity}</td>
-                      <td>${item.subtotal}</td>
+                      <td className="text-center align-middle">
+                        ${item.price}
+                      </td>
+                      <td className="text-center align-middle">
+                        {item.quantity}
+                      </td>
+                      <td className="text-center align-middle">
+                        ${item.subtotal}
+                      </td>
                     </tr>
                   );
                 })}
