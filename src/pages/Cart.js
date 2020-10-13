@@ -20,7 +20,6 @@ const Cart = () => {
         <>
           <Row>
             <h3>Carrito de compras</h3>
-            {/* <span>Items in cart: {cart.length}</span> */}
           </Row>
           <Row>
             <Table responsive>
