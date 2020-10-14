@@ -44,7 +44,7 @@ const Home = () => {
           <Spinner animation="grow" variant="success" />
         </div>
       ) : (
-        <Item items={items} />
+        <Item items={items} route={`/producto/${items.id}`} />
       )}
     </div>
   );

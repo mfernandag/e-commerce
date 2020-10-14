@@ -7,8 +7,6 @@ import PlantsCategory from "./pages/PlantsCategory";
 import SeedsCategory from "./pages/SeedsCategory";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { productsList } from "./components/productsList";
-
 import { CartProvider } from "./context/cartContext";
 
 import "./assets/styles/styles.css";
@@ -20,7 +18,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <Home data={productsList} />
+            <Home />
           </Route>
           <Route exact path="/productos/plantas">
             <PlantsCategory />
@@ -29,7 +27,7 @@ function App() {
             <SeedsCategory />
           </Route>
           <Route path="/producto/:id">
-            <ItemDetailContainer data={productsList} />
+            <ItemDetailContainer />
           </Route>
           <Route exact path="/cart">
             <Cart />
