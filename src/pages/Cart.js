@@ -1,10 +1,19 @@
-import React, { useContext } from "react";
-import { Container, Row, Col, Table, Button } from "react-bootstrap";
+import React, { useState, useContext, useEffect } from "react";
+import { Container, Row, Col, Table, Button, Spinner } from "react-bootstrap";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
+import * as firebase from "firebase/app";
+import { useParams } from "react-router-dom";
+import "firebase/firestore";
+import { getFirestore } from "../firebase";
 
 const Cart = () => {
+  const { id } = useParams();
   const [cart, setCart] = useContext(CartContext);
+  const [orderId, setOrderId] = useState({});
+  const [error, setError] = useState({});
+  // const [loading, setLoading] = useState(false);
+
   let totalSum;
 
   const reducer = () => {
@@ -14,8 +23,32 @@ const Cart = () => {
 
   reducer();
 
+  useEffect(() => {
+    // setLoading(true);
+    const db = getFirestore();
+    const orders = db.collection("orders");
+    const newOrder = {
+      buyer: "fer",
+      items: cart,
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      total: totalSum,
+    };
+
+    orders
+      .add(newOrder)
+      .then(({ id }) => {
+        setOrderId(id);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+    // .finally(() => {
+    //   setLoading(false);
+    // }, [id]);
+  }, []);
+
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 pb-4">
       {cart.length > 0 ? (
         <>
           <Row>
@@ -61,12 +94,14 @@ const Cart = () => {
             </Table>
           </Row>
           <Row className="d-flex flex-column float-right">
-            <Col>
-              <h4>TOTAL: ${totalSum}</h4>
-              <Button className="mt-4" variant="dark" block>
-                FINALIZAR COMPRA
-              </Button>
-            </Col>
+            <Row>
+              <Col>
+                <h4>TOTAL: ${totalSum}</h4>
+                <Button className="mt-4" variant="dark" block onClick={orderId}>
+                  FINALIZAR COMPRA
+                </Button>
+              </Col>
+            </Row>
           </Row>
         </>
       ) : (
