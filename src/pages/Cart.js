@@ -12,7 +12,6 @@ const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
   const [orderId, setOrderId] = useState({});
   const [error, setError] = useState({});
-  // const [loading, setLoading] = useState(false);
 
   let totalSum;
 
@@ -24,7 +23,6 @@ const Cart = () => {
   reducer();
 
   useEffect(() => {
-    // setLoading(true);
     const db = getFirestore();
     const orders = db.collection("orders");
     const newOrder = {
@@ -42,9 +40,6 @@ const Cart = () => {
       .catch((err) => {
         setError(err);
       });
-    // .finally(() => {
-    //   setLoading(false);
-    // }, [id]);
   }, []);
 
   return (
@@ -97,7 +92,12 @@ const Cart = () => {
             <Row>
               <Col>
                 <h4>TOTAL: ${totalSum}</h4>
-                <Button className="mt-4" variant="dark" block onClick={orderId}>
+                <Button
+                  className="mt-4"
+                  variant="dark"
+                  block
+                  onClick={() => orderId}
+                >
                   FINALIZAR COMPRA
                 </Button>
               </Col>
