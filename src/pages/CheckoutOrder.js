@@ -16,30 +16,40 @@ const CheckoutOrder = () => {
 
   return (
     <Container className="mt-4 pb-4">
-      <Row>
-        <h3>Carrito de compras</h3>
-      </Row>
+      <h3 className="mb-4">Carrito de compras</h3>
       <Row>
         <Col xs={12} md={8}>
           <Form>
+            <Row>
+              <Col>
+                <Form.Group controlId="formName">
+                  <Form.Label>Nombre</Form.Label>
+                  <Form.Control type="text" placeholder="Nombre" />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group controlId="formSurname">
+                  <Form.Label>Apellido</Form.Label>
+                  <Form.Control type="text" placeholder="Apellido" />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={6}>
+                <Form.Group controlId="formPhone">
+                  <Form.Label>Teléfono</Form.Label>
+                  <Form.Control type="email" placeholder="Teléfono" />
+                </Form.Group>
+              </Col>
+            </Row>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+              <Form.Label>Dirección de correo electrónico </Form.Label>
+              <Form.Control type="email" placeholder="Ingresar email" />
             </Form.Group>
-
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
           </Form>
         </Col>
         <Col xs={12} md={4}>
