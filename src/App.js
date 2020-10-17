@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import CheckoutOrder from "./pages/CheckoutOrder";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
 import PlantsCategory from "./pages/PlantsCategory";
 import SeedsCategory from "./pages/SeedsCategory";
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Cart />
+          </Route>
+          <Route exact path="/checkout">
+            <CheckoutOrder />
           </Route>
         </Switch>
       </CartProvider>

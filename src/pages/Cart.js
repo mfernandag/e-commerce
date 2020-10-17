@@ -92,14 +92,16 @@ const Cart = () => {
             <Row>
               <Col>
                 <h4>TOTAL: ${totalSum}</h4>
-                <Button
-                  className="mt-4"
-                  variant="dark"
-                  block
-                  onClick={() => orderId}
-                >
-                  FINALIZAR COMPRA
-                </Button>
+                <Link to="/checkout">
+                  <Button
+                    className="mt-4"
+                    variant="dark"
+                    block
+                    onClick={() => orderId}
+                  >
+                    FINALIZAR COMPRA
+                  </Button>
+                </Link>
               </Col>
             </Row>
           </Row>
