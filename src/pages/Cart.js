@@ -10,8 +10,8 @@ import { getFirestore } from "../firebase";
 const Cart = () => {
   const { id } = useParams();
   const [cart, setCart] = useContext(CartContext);
-  const [orderId, setOrderId] = useState({});
-  const [error, setError] = useState({});
+  // const [orderId, setOrderId] = useState({});
+  // const [error, setError] = useState({});
 
   let totalSum;
 
@@ -22,25 +22,25 @@ const Cart = () => {
 
   reducer();
 
-  useEffect(() => {
-    const db = getFirestore();
-    const orders = db.collection("orders");
-    const newOrder = {
-      buyer: "fer",
-      items: cart,
-      date: firebase.firestore.Timestamp.fromDate(new Date()),
-      total: totalSum,
-    };
+  // useEffect(() => {
+  //   const db = getFirestore();
+  //   const orders = db.collection("orders");
+  //   const newOrder = {
+  //     buyer: "fer",
+  //     items: cart,
+  //     date: firebase.firestore.Timestamp.fromDate(new Date()),
+  //     total: totalSum,
+  //   };
 
-    orders
-      .add(newOrder)
-      .then(({ id }) => {
-        setOrderId(id);
-      })
-      .catch((err) => {
-        setError(err);
-      });
-  }, []);
+  //   orders
+  //     .add(newOrder)
+  //     .then(({ id }) => {
+  //       setOrderId(id);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //     });
+  // }, []);
 
   return (
     <Container className="mt-4 pb-4">
@@ -97,7 +97,7 @@ const Cart = () => {
                     className="mt-4"
                     variant="dark"
                     block
-                    onClick={() => orderId}
+                    // onClick={() => orderId}
                   >
                     FINALIZAR COMPRA
                   </Button>
