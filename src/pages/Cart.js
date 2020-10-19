@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Container, Row, Col, Table, Button, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
-import * as firebase from "firebase/app";
+// import * as firebase from "firebase/app";
 import { useParams } from "react-router-dom";
 import "firebase/firestore";
-import { getFirestore } from "../firebase";
+// import { getFirestore } from "../firebase";
 
 const Cart = () => {
   const { id } = useParams();

@@ -1,13 +1,14 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../context/cartContext";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import * as firebase from "firebase/app";
 import { useParams } from "react-router-dom";
 import "firebase/firestore";
 import { getFirestore } from "../firebase";
+import SuccessModal from "../components/SuccessModal";
 
 const CheckoutOrder = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const [cart, setCart] = useContext(CartContext);
   const [orderId, setOrderId] = useState({});
   const [error, setError] = useState({});
@@ -15,6 +16,7 @@ const CheckoutOrder = () => {
   const [lastname, setLastname] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [modalShow, setModalShow] = React.useState(false);
 
   let totalSum;
 
@@ -50,7 +52,7 @@ const CheckoutOrder = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    setModalShow(true);
     console.log(
       `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
     );
@@ -154,6 +156,11 @@ const CheckoutOrder = () => {
               >
                 Realizar el pedido
               </Button>
+              <SuccessModal
+                show={modalShow}
+                orderId={orderId}
+                onHide={() => setModalShow(false)}
+              />
             </Card.Body>
           </Card>
         </Col>
