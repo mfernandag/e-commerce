@@ -14,8 +14,8 @@ const SuccessModal = (props) => {
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body closeButton className="text-center">
         <img
-          className="img-fluid"
-          width="100px"
+          className="img-fluid mb-4"
+          width="90px"
           src={successIcon}
           alt="compra exitosa"
         ></img>

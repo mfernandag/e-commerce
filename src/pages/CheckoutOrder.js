@@ -31,10 +31,7 @@ const CheckoutOrder = () => {
     const db = getFirestore();
     const orders = db.collection("orders");
     const newOrder = {
-      name: name,
-      lastname: lastname,
-      phone: phone,
-      email: email,
+      buyer: { name: name, lastname: lastname, phone: phone, email: email },
       items: cart,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
       total: totalSum,
