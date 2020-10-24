@@ -9,7 +9,7 @@ import SuccessModal from "../components/SuccessModal";
 
 const CheckoutOrder = () => {
   // const { id } = useParams();
-  const [cart] = useContext(CartContext);
+  const [cart], cleanCart = useContext(CartContext);
   const [orderId, setOrderId] = useState({});
   const [error, setError] = useState({});
   const [name, setName] = useState("");
@@ -28,10 +28,11 @@ const CheckoutOrder = () => {
   reducer();
 
   useEffect(() => {
+    const clientData = { name, lastname, phone, email };
     const db = getFirestore();
     const orders = db.collection("orders");
     const newOrder = {
-      buyer: { name: name, lastname: lastname, phone: phone, email: email },
+      buyer: clientData,
       items: cart,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
       total: totalSum,
@@ -53,6 +54,7 @@ const CheckoutOrder = () => {
     console.log(
       `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
     );
+    cleanCart()
   };
 
   return (

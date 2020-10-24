@@ -24,8 +24,10 @@ export const CartProvider = (props) => {
     setCart(purchases);
   };
 
+  const cleanCart = () => setCart([]);
+
   return (
-    <CartContext.Provider value={[cart, setCart, cartItems]}>
+    <CartContext.Provider value={[cart, setCart, cartItems, cleanCart]}>
       {props.children}
     </CartContext.Provider>
   );
