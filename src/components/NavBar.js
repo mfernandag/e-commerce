@@ -2,13 +2,14 @@ import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartIcon from "./CartIcon";
+import logo from "../assets/images/logo.png";
 
 const NavBar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="md">
+      <Navbar expand="md">
         <Link className="nav-link" to="/">
-          <Navbar.Brand>Nombre tienda</Navbar.Brand>
+          <img src={logo} alt="Logo Audrey, plantas y semillas"></img>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

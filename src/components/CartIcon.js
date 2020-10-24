@@ -4,7 +4,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../context/cartContext";
 
 const CartIcon = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   let itemsQuantity;
 
   const reducer = () => {

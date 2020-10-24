@@ -1,17 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
-// import * as firebase from "firebase/app";
-import { useParams } from "react-router-dom";
 import "firebase/firestore";
-// import { getFirestore } from "../firebase";
 
 const Cart = () => {
-  const { id } = useParams();
-  const [cart, setCart] = useContext(CartContext);
-  // const [orderId, setOrderId] = useState({});
-  // const [error, setError] = useState({});
+  const [cart] = useContext(CartContext);
 
   let totalSum;
 
@@ -21,26 +15,6 @@ const Cart = () => {
   };
 
   reducer();
-
-  // useEffect(() => {
-  //   const db = getFirestore();
-  //   const orders = db.collection("orders");
-  //   const newOrder = {
-  //     buyer: "fer",
-  //     items: cart,
-  //     date: firebase.firestore.Timestamp.fromDate(new Date()),
-  //     total: totalSum,
-  //   };
-
-  //   orders
-  //     .add(newOrder)
-  //     .then(({ id }) => {
-  //       setOrderId(id);
-  //     })
-  //     .catch((err) => {
-  //       setError(err);
-  //     });
-  // }, []);
 
   return (
     <Container className="mt-4 pb-4">

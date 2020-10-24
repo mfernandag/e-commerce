@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Banner from "../components/Banner";
 import Item from "../components/Item";
 import { Spinner } from "react-bootstrap";
 import { getFirestore } from "../firebase/index";
@@ -34,11 +33,6 @@ const Home = () => {
 
   return (
     <div>
-      <Banner
-        greeting={
-          "Bienvenidos, próximamente encontrarán algún producto a la venta"
-        }
-      />
       {loading ? (
         <div className="d-flex align-items-center justify-content-center">
           <Spinner animation="grow" variant="success" />

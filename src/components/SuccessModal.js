@@ -19,6 +19,7 @@ const SuccessModal = (props) => {
           src={successIcon}
           alt="compra exitosa"
         ></img>
+        <h4 className="mb-4">¡Gracias por elegirnos, {props.name}!</h4>
         <h4>Tu orden #{props.orderId} fue procesada exitosamente</h4>
       </Modal.Body>
       <Modal.Footer>

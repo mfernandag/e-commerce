@@ -2,14 +2,14 @@ import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../context/cartContext";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import * as firebase from "firebase/app";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import "firebase/firestore";
 import { getFirestore } from "../firebase";
 import SuccessModal from "../components/SuccessModal";
 
 const CheckoutOrder = () => {
   // const { id } = useParams();
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   const [orderId, setOrderId] = useState({});
   const [error, setError] = useState({});
   const [name, setName] = useState("");
@@ -78,6 +78,7 @@ const CheckoutOrder = () => {
                 <Form.Group>
                   <Form.Label>Apellido</Form.Label>
                   <Form.Control
+                    required
                     type="text"
                     placeholder="Apellido"
                     name={"lastname"}
@@ -92,6 +93,7 @@ const CheckoutOrder = () => {
                 <Form.Group>
                   <Form.Label>Teléfono</Form.Label>
                   <Form.Control
+                    required
                     type="email"
                     placeholder="Teléfono"
                     value={phone}
@@ -103,6 +105,7 @@ const CheckoutOrder = () => {
                 <Form.Group>
                   <Form.Label>Dirección de correo electrónico </Form.Label>
                   <Form.Control
+                    required
                     type="email"
                     placeholder="Ingresar email"
                     values={email}
@@ -150,12 +153,14 @@ const CheckoutOrder = () => {
                 block
                 onClick={() => orderId}
                 onClick={handleSubmit}
+                disabled={!name || !phone || !lastname || !email}
               >
                 Realizar el pedido
               </Button>
               <SuccessModal
                 show={modalShow}
                 orderId={orderId}
+                name={name}
                 onHide={() => setModalShow(false)}
               />
             </Card.Body>
