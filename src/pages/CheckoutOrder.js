@@ -1,14 +1,6 @@
-import React, { useState, useContext, useReducer } from "react";
+import React, { useState, useContext } from "react";
 import { CartContext } from "../context/cartContext";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Form,
-  Spinner,
-} from "react-bootstrap";
+import { Row, Col, Card, Button, Form, Spinner } from "react-bootstrap";
 import * as firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../firebase";
@@ -21,8 +13,10 @@ const CheckoutOrder = () => {
   const [error, setError] = useState({});
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
+  const [adress, setAdress] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [emailConfirmation, setEmailConfirmation] = useState("");
   const [modalShow, setModalShow] = React.useState(false);
 
   let totalSum;
@@ -36,7 +30,13 @@ const CheckoutOrder = () => {
 
   const createOrder = () => {
     setLoading(true);
-    const clientData = { name, lastname, phone, email };
+    const clientData = {
+      name,
+      phone,
+      adress,
+      email,
+      emailConfirmation,
+    };
     const db = getFirestore();
     const orders = db.collection("orders");
     const newOrder = {
@@ -70,13 +70,13 @@ const CheckoutOrder = () => {
     return <Spinner></Spinner>;
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
 
-    console.log(
-      `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
-    );
-  };
+  //   // console.log(
+  //   //   `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
+  //   // );
+  // };
 
   return (
     <>
@@ -91,7 +91,7 @@ const CheckoutOrder = () => {
                   <Form.Label>Nombre</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Nombre"
+                    placeholder="Ingrese nombre"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                   />
@@ -103,8 +103,8 @@ const CheckoutOrder = () => {
                   <Form.Control
                     required
                     type="text"
-                    placeholder="Apellido"
-                    name={"lastname"}
+                    placeholder="Ingrese apellido"
+                    // name={"lastname"}
                     value={lastname}
                     onChange={(event) => setLastname(event.target.value)}
                   />
@@ -126,13 +126,41 @@ const CheckoutOrder = () => {
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Dirección de correo electrónico </Form.Label>
+                  <Form.Label>Domicilio</Form.Label>
+                  <Form.Control
+                    required
+                    type="text"
+                    placeholder="Ingrese domicilio"
+                    value={adress}
+                    onChange={(event) => setAdress(event.target.value)}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={6}>
+                <Form.Group>
+                  <Form.Label>Dirección de email</Form.Label>
                   <Form.Control
                     required
                     type="email"
                     placeholder="Ingresar email"
                     values={email}
                     onChange={(event) => setEmail(event.target.value)}
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group>
+                  <Form.Label>Confirme su email </Form.Label>
+                  <Form.Control
+                    required
+                    type="email"
+                    placeholder="Ingrese nuevamente su email"
+                    values={emailConfirmation}
+                    onChange={(event) =>
+                      setEmailConfirmation(event.target.value)
+                    }
                   />
                 </Form.Group>
               </Col>
@@ -175,7 +203,14 @@ const CheckoutOrder = () => {
                 id="checkout-form"
                 block
                 onClick={createOrder}
-                disabled={!name || !phone || !lastname || !email}
+                disabled={
+                  !name ||
+                  !lastname ||
+                  !phone ||
+                  !adress ||
+                  !emailConfirmation ||
+                  !email
+                }
               >
                 Realizar el pedido
               </Button>

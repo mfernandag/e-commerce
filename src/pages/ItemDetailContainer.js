@@ -59,15 +59,20 @@ const ItemDetailContainer = () => {
           <Spinner animation="grow" variant="success" />
         </div>
       ) : (
-        <Container className="t-4 pt-4">
-          <Row className="pt-4">
-            <Col xs={6} className="mr-4">
-              <img className="img-fluid" alt="flower" src={product.img}></img>
+        <Container>
+          <Row>
+            <Col md={6} className="">
+              <img
+                className="img-fluid pb-2"
+                alt="flower"
+                src={product.img}
+              ></img>
             </Col>
-            <Col xs={4}>
+            <Col md={6}>
               <h1>{product.name}</h1>
-              <h3>${product.price},00</h3>
-              <p>{product.description}</p>
+              <hr></hr>
+              <h3 className="pt-2">${product.price},00</h3>
+              <p className="pt-4">{product.description}</p>
               <ItemCount countMaker={countMaker} min={min} max={max} />
               <Button
                 onClick={addToCart}
@@ -76,7 +81,7 @@ const ItemDetailContainer = () => {
                 size="lg"
                 block
               >
-                Agregar al carrito{" "}
+                Agregar al carrito
                 <FontAwesomeIcon className="mr-2 ml-2" icon={faShoppingCart} />
               </Button>
             </Col>

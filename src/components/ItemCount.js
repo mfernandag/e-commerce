@@ -4,7 +4,7 @@ const ItemCount = ({ countMaker, min, max }) => {
   const [countItems, setCountItems] = useState(1);
 
   return (
-    <div className="d-flex" onClick={countMaker(countItems)}>
+    <div className="d-flex pt-4 pb-4" onClick={countMaker(countItems)}>
       <button
         onClick={() => setCountItems(countItems - 1)}
         type="submit"
