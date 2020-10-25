@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
 import { getFirestore } from "../firebase";
 import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 let min = 1;
 let max = 10;
@@ -74,7 +76,8 @@ const ItemDetailContainer = () => {
                 size="lg"
                 block
               >
-                Agregar al carrito {counter} items
+                Agregar al carrito{" "}
+                <FontAwesomeIcon className="mr-2 ml-2" icon={faShoppingCart} />
               </Button>
             </Col>
           </Row>

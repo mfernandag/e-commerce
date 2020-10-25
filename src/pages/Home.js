@@ -32,7 +32,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container-margin">
       {loading ? (
         <div className="d-flex align-items-center justify-content-center">
           <Spinner animation="grow" variant="success" />

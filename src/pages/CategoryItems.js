@@ -53,10 +53,12 @@ const CategoryItems = () => {
           <Spinner animation="grow" variant="success"></Spinner>
         </div>
       )}
+
       <Container>
         <h3>{categoryTitle}</h3>
-        <hr></hr>
       </Container>
+      <hr></hr>
+
       <Item items={items} />
     </>
   );

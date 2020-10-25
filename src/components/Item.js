@@ -6,7 +6,7 @@ import { Card, Container } from "react-bootstrap";
 const Item = ({ items }) => {
   // console.log(items);
   return (
-    <Container className="d-flex justify-content-between flex-wrap mt-4">
+    <Container className="d-flex justify-content-between flex-wrap mt-4 container-margin">
       {items.map((item, id) => {
         return (
           <Link className="card-links" key={id} to={`/producto/${item.id}`}>

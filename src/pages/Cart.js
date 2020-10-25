@@ -17,7 +17,7 @@ const Cart = () => {
   reducer();
 
   return (
-    <Container className="mt-4 pb-4">
+    <Container className="pb-4 container-margin">
       {cart.length > 0 ? (
         <>
           <Row>

@@ -79,7 +79,7 @@ const CheckoutOrder = () => {
   };
 
   return (
-    <Container className="mt-4 pb-4">
+    <>
       <h3 className="mb-4">Carrito de compras</h3>
       <hr></hr>
       <Row>
@@ -190,7 +190,7 @@ const CheckoutOrder = () => {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </>
   );
 };
 

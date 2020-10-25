@@ -7,7 +7,7 @@ import logo from "../assets/images/logo.png";
 const NavBar = () => {
   return (
     <>
-      <Navbar expand="md">
+      <Navbar expand="md" fixed="top" className="navBar">
         <Link className="nav-link" to="/">
           <img src={logo} alt="Logo Audrey, plantas y semillas"></img>
         </Link>
