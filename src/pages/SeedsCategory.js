@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Item from "../components/Item";
-import { Spinner } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import firebase from "firebase";
 import { getFirestore } from "../firebase/index";
 
@@ -45,7 +45,9 @@ const SeedsCategory = () => {
         </div>
       ) : (
         <>
-          <h1>Semillas</h1>
+          <Container>
+            <h1>Semillas</h1>
+          </Container>
           <Item items={items} />
         </>
       )}

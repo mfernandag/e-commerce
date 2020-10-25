@@ -9,7 +9,7 @@ import SuccessModal from "../components/SuccessModal";
 
 const CheckoutOrder = () => {
   // const { id } = useParams();
-  const [cart], cleanCart = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   const [orderId, setOrderId] = useState({});
   const [error, setError] = useState({});
   const [name, setName] = useState("");
@@ -54,7 +54,7 @@ const CheckoutOrder = () => {
     console.log(
       `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
     );
-    cleanCart()
+    cleanCart();
   };
 
   return (
