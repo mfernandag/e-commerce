@@ -1,16 +1,23 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { CartContext } from "../context/cartContext";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  Form,
+  Spinner,
+} from "react-bootstrap";
 import * as firebase from "firebase/app";
-//import { useParams } from "react-router-dom";
 import "firebase/firestore";
 import { getFirestore } from "../firebase";
 import SuccessModal from "../components/SuccessModal";
 
 const CheckoutOrder = () => {
-  // const { id } = useParams();
   const [cart] = useContext(CartContext);
   const [orderId, setOrderId] = useState({});
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -27,12 +34,13 @@ const CheckoutOrder = () => {
 
   reducer();
 
-  useEffect(() => {
+  const createOrder = () => {
+    setLoading(true);
     const clientData = { name, lastname, phone, email };
     const db = getFirestore();
     const orders = db.collection("orders");
     const newOrder = {
-      buyer: clientData,
+      clientData: clientData,
       items: cart,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
       total: totalSum,
@@ -42,11 +50,17 @@ const CheckoutOrder = () => {
       .add(newOrder)
       .then(({ id }) => {
         setOrderId(id);
+        setLoading(false);
+        setModalShow(true);
       })
-      .catch((err) => {
-        setError(err);
+      .catch((error) => {
+        console.log("Error processing order: ", error);
       });
-  }, []);
+  };
+
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -54,7 +68,6 @@ const CheckoutOrder = () => {
     console.log(
       `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
     );
-    cleanCart();
   };
 
   return (
@@ -153,8 +166,8 @@ const CheckoutOrder = () => {
                 size="lg"
                 id="checkout-form"
                 block
-                onClick={() => orderId}
-                onClick={handleSubmit}
+                onClick={createOrder}
+                // onClick={handleSubmit}
                 disabled={!name || !phone || !lastname || !email}
               >
                 Realizar el pedido
