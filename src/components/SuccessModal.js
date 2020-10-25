@@ -12,7 +12,7 @@ const SuccessModal = (props) => {
       centered
     >
       <Modal.Header closeButton></Modal.Header>
-      <Modal.Body closeButton className="text-center">
+      <Modal.Body className="text-center">
         <img
           className="img-fluid mb-4"
           width="90px"
@@ -24,7 +24,7 @@ const SuccessModal = (props) => {
       </Modal.Body>
       <Modal.Footer>
         <Link to="/">
-          <Button onClick={props.onHide}>Ir a Home</Button>
+          <Button onClick={props.clearState}>Ir a Home</Button>
         </Link>
       </Modal.Footer>
     </Modal>

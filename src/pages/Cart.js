@@ -48,13 +48,13 @@ const Cart = () => {
                         {item.name}
                       </td>
                       <td className="text-center align-middle">
-                        ${item.price}
+                        ${item.price},00
                       </td>
                       <td className="text-center align-middle">
                         {item.quantity}
                       </td>
                       <td className="text-center align-middle">
-                        ${item.subtotal}
+                        ${item.subtotal},00
                       </td>
                     </tr>
                   );
@@ -65,7 +65,7 @@ const Cart = () => {
           <Row className="d-flex flex-column float-right">
             <Row>
               <Col>
-                <h4>TOTAL: ${totalSum}</h4>
+                <h4>TOTAL: ${totalSum},00</h4>
                 <Link to="/checkout">
                   <Button
                     className="mt-4"

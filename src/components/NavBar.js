@@ -18,10 +18,22 @@ const NavBar = () => {
               Home
             </Link>
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/productos/semillas">
+              {/* <NavDropdown.Item as={Link} to="/productos/semillas">
                 Semillas
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/productos/plantas">
+                Plantas
+              </NavDropdown.Item> */}
+              <NavDropdown.Item
+                as={Link}
+                to={`/categories/EyolZ78wrbKeqyNPp0jv`}
+              >
+                Semillas
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to={`/categories/1yrzKw8JZFcFVp4mc2RJ`}
+              >
                 Plantas
               </NavDropdown.Item>
             </NavDropdown>

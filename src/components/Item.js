@@ -15,7 +15,7 @@ const Item = ({ items }) => {
               <Card.Body>
                 <Card.Title className="text-center">{item.name}</Card.Title>
                 <Card.Text className="text-center price">
-                  ${item.price}
+                  ${item.price},00
                 </Card.Text>
               </Card.Body>
             </Card>

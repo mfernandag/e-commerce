@@ -64,7 +64,7 @@ const ItemDetailContainer = () => {
             </Col>
             <Col xs={4}>
               <h1>{product.name}</h1>
-              <h3>${product.price}</h3>
+              <h3>${product.price},00</h3>
               <p>{product.description}</p>
               <ItemCount countMaker={countMaker} min={min} max={max} />
               <Button

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useReducer } from "react";
 import { CartContext } from "../context/cartContext";
 import {
   Container,
@@ -58,13 +58,21 @@ const CheckoutOrder = () => {
       });
   };
 
+  const clearState = () => {
+    renderRedirect();
+  };
+
+  const renderRedirect = () => {
+    window.location.href = "/";
+  };
+
   if (loading) {
     return <Spinner></Spinner>;
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setModalShow(true);
+
     console.log(
       `${name} ${lastname} ${phone} ${email} Submitting order ${orderId}`
     );
@@ -151,7 +159,7 @@ const CheckoutOrder = () => {
                     </Col>
                     <Col>
                       <p className="ml-2 align-middle">
-                        Subtotal: <strong>${item.subtotal}</strong>
+                        Subtotal: <strong>${item.subtotal},00</strong>
                       </p>
                     </Col>
                   </Row>
@@ -159,7 +167,7 @@ const CheckoutOrder = () => {
               })}
               <hr></hr>
               <p className="float-right">
-                Total: <strong>${totalSum}</strong>
+                Total: <strong>${totalSum},00</strong>
               </p>
               <Button
                 variant="primary"
@@ -167,7 +175,6 @@ const CheckoutOrder = () => {
                 id="checkout-form"
                 block
                 onClick={createOrder}
-                // onClick={handleSubmit}
                 disabled={!name || !phone || !lastname || !email}
               >
                 Realizar el pedido
@@ -176,6 +183,7 @@ const CheckoutOrder = () => {
                 show={modalShow}
                 orderId={orderId}
                 name={name}
+                clearState={clearState}
                 onHide={() => setModalShow(false)}
               />
             </Card.Body>

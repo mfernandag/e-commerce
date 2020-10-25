@@ -4,8 +4,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import CheckoutOrder from "./pages/CheckoutOrder";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
-import PlantsCategory from "./pages/PlantsCategory";
-import SeedsCategory from "./pages/SeedsCategory";
+import CategoryItems from "./pages/CategoryItems";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { CartProvider } from "./context/cartContext";
@@ -21,14 +20,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/productos/plantas">
-            <PlantsCategory />
-          </Route>
-          <Route exact path="/productos/semillas">
-            <SeedsCategory />
-          </Route>
           <Route path="/producto/:id">
             <ItemDetailContainer />
+          </Route>
+          <Route path="/categories/:categoryId">
+            <CategoryItems />
           </Route>
           <Route exact path="/cart">
             <Cart />
