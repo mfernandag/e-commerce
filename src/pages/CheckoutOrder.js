@@ -209,7 +209,8 @@ const CheckoutOrder = () => {
                   !phone ||
                   !adress ||
                   !emailConfirmation ||
-                  !email
+                  !email ||
+                  emailConfirmation !== email
                 }
               >
                 Realizar el pedido

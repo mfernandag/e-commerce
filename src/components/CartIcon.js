@@ -19,8 +19,11 @@ const CartIcon = () => {
 
   return (
     <>
-      <FontAwesomeIcon className="mr-2 ml-2" icon={faShoppingCart} />
-      <span>({itemsQuantity})</span>
+      <FontAwesomeIcon
+        className="mr-2 ml-2 audrey-green"
+        icon={faShoppingCart}
+      />
+      <span className="audrey-green">({itemsQuantity})</span>
     </>
   );
 };

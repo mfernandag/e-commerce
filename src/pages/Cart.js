@@ -62,17 +62,13 @@ const Cart = () => {
               </tbody>
             </Table>
           </Row>
+          <hr></hr>
           <Row className="d-flex flex-column float-right">
             <Row>
               <Col>
                 <h4>TOTAL: ${totalSum},00</h4>
                 <Link to="/checkout">
-                  <Button
-                    className="mt-4"
-                    variant="dark"
-                    block
-                    // onClick={() => orderId}
-                  >
+                  <Button className="mt-4" variant="dark" block>
                     FINALIZAR COMPRA
                   </Button>
                 </Link>

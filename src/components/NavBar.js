@@ -18,12 +18,6 @@ const NavBar = () => {
               Home
             </Link>
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              {/* <NavDropdown.Item as={Link} to="/productos/semillas">
-                Semillas
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/productos/plantas">
-                Plantas
-              </NavDropdown.Item> */}
               <NavDropdown.Item
                 as={Link}
                 to={`/categories/EyolZ78wrbKeqyNPp0jv`}
@@ -37,11 +31,11 @@ const NavBar = () => {
                 Plantas
               </NavDropdown.Item>
             </NavDropdown>
-            <Link className="nav-link" to="/cart">
-              <CartIcon />
-            </Link>
           </Nav>
         </Navbar.Collapse>
+        <Link className="nav-link success" to="/cart">
+          <CartIcon />
+        </Link>
       </Navbar>
     </>
   );
