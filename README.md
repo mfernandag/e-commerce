@@ -3,6 +3,8 @@ E-commerce
 
 Es una plataforma de venta de plantas y semillas realizada con React y Firebase.
 
+![](Goracy-Ecommerce.gif)
+
 
 Instalación y ejecución del proyecto
 ======
